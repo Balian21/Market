@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="Hiber_Diary"
+                   namespace="Hiber_Diary">
+  <class name="Message">
+    <id name="Id">
+      <generator class="native" />
+    </id>
+    <property name="Title" />
+    <property name="Description" />
+    <property name="Planned" />
+    <property name="Status" />
+    <property name="Created" />
+  </class>
+</hibernate-mapping>

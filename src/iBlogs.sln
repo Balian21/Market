@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hiber_Diary", "Hiber_Diary\Hiber_Diary.csproj", "{D36549DB-4A06-4599-A41E-11F92AD9E222}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHibernateDemo", "NHibernateDemo\NHibernateDemo.csproj", "{5FE4C448-C873-44A9-8BF8-5EB7DCB23CBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluenNHibernateTest", "FluenNHibernateTest\FluenNHibernateTest.csproj", "{10415D02-83B7-400E-A179-80CFB8927791}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsTest", "WinFormsTest\WinFormsTest.csproj", "{025868B1-92EF-4F7A-A3FA-8433A5C2BF56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreNHibernate", "StoreNHibernate\StoreNHibernate.csproj", "{D4E3BFC7-3808-403C-8AD9-6DB0734F503F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RunningButtons", "RunningButtons\RunningButtons.csproj", "{E38B9492-36CA-4364-8D58-2BF865042CA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcApplication1", "MvcApplication1\MvcApplication1.csproj", "{55F6FFCD-C053-40BF-96F5-3C49C2611C54}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D36549DB-4A06-4599-A41E-11F92AD9E222}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D36549DB-4A06-4599-A41E-11F92AD9E222}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D36549DB-4A06-4599-A41E-11F92AD9E222}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D36549DB-4A06-4599-A41E-11F92AD9E222}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FE4C448-C873-44A9-8BF8-5EB7DCB23CBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FE4C448-C873-44A9-8BF8-5EB7DCB23CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FE4C448-C873-44A9-8BF8-5EB7DCB23CBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FE4C448-C873-44A9-8BF8-5EB7DCB23CBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10415D02-83B7-400E-A179-80CFB8927791}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10415D02-83B7-400E-A179-80CFB8927791}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10415D02-83B7-400E-A179-80CFB8927791}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10415D02-83B7-400E-A179-80CFB8927791}.Release|Any CPU.Build.0 = Release|Any CPU
+		{025868B1-92EF-4F7A-A3FA-8433A5C2BF56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{025868B1-92EF-4F7A-A3FA-8433A5C2BF56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{025868B1-92EF-4F7A-A3FA-8433A5C2BF56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{025868B1-92EF-4F7A-A3FA-8433A5C2BF56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4E3BFC7-3808-403C-8AD9-6DB0734F503F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4E3BFC7-3808-403C-8AD9-6DB0734F503F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4E3BFC7-3808-403C-8AD9-6DB0734F503F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4E3BFC7-3808-403C-8AD9-6DB0734F503F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E38B9492-36CA-4364-8D58-2BF865042CA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E38B9492-36CA-4364-8D58-2BF865042CA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E38B9492-36CA-4364-8D58-2BF865042CA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E38B9492-36CA-4364-8D58-2BF865042CA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55F6FFCD-C053-40BF-96F5-3C49C2611C54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55F6FFCD-C053-40BF-96F5-3C49C2611C54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55F6FFCD-C053-40BF-96F5-3C49C2611C54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55F6FFCD-C053-40BF-96F5-3C49C2611C54}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
