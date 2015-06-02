@@ -1,9 +1,9 @@
-﻿using NHibernate;
+﻿using Model;
+using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Dialect;
 using NHibernate.Driver;
 using NHibernate.Linq;
-using StoreNHibernate.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,13 +17,13 @@ using System.Windows.Forms;
 namespace StoreNHibernate
 {
     public partial class SelectCategoryForm : Form
-    {        
+    {
         public Category category;
 
         public SelectCategoryForm()
         {
             InitializeComponent();
-                        
+
             GetCategories();
         }
 
@@ -71,10 +71,10 @@ namespace StoreNHibernate
             {
                 MessageBox.Show("Ничего не выбрано!");
             }
-        }       
+        }
 
         private void buttonCancel_Click(object sender, EventArgs e)
-        {            
+        {
             this.Close();
         }
     }

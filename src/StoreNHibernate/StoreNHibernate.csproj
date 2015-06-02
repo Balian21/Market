@@ -95,12 +95,6 @@
       <DependentUpon>ManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ManageSupplier.cs" />
-    <Compile Include="Mapping\CategoryMap.cs" />
-    <Compile Include="Mapping\ProductMap.cs" />
-    <Compile Include="Mapping\SupplierMap.cs" />
-    <Compile Include="Model\Category.cs" />
-    <Compile Include="Model\Product.cs" />
-    <Compile Include="Model\Supplier.cs" />
     <Compile Include="NHibernateHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -164,6 +158,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ModelMapping\ModelMapping.csproj">
+      <Project>{2c65ee19-6823-43aa-8d55-685224c0fa51}</Project>
+      <Name>ModelMapping</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{411726b3-ab0e-4bb3-ada6-1127d2b79cdd}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,23 +1,24 @@
-﻿using NHibernate;
-using NHibernate.Mapping.Attributes;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StoreNHibernate.Model
+namespace Model
 {
-    public class Supplier
+    public class Product
     {
-        private IList<Product> products = new List<Product>();
-
         public virtual int Id { get; set; }
 
         public virtual string Name { get; set; }
 
-        public virtual IList<Product> Products { get; set; }
+        public virtual Category Category { get; set; }
+
+        public virtual Supplier Supplier { get; set; }
+
+        public virtual decimal Price { get; set; }
+
+        public virtual int Availability { get; set; }
 
         public override string ToString()
         {

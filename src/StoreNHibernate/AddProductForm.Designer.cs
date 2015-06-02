@@ -125,7 +125,7 @@
             // 
             // categoryBindingSource
             // 
-            this.categoryBindingSource.DataSource = typeof(StoreNHibernate.Model.Category);
+            this.categoryBindingSource.DataSource = typeof(Model.Category);
             // 
             // AddProductForm
             // 

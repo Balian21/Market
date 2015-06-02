@@ -1,5 +1,5 @@
-﻿using NHibernate;
-using StoreNHibernate.Model;
+﻿using Model;
+using NHibernate;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

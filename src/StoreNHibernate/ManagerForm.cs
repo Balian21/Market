@@ -1,9 +1,9 @@
-﻿using NHibernate;
+﻿using Model;
+using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Dialect;
 using NHibernate.Driver;
 using NHibernate.Linq;
-using StoreNHibernate.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -82,7 +82,7 @@ namespace StoreNHibernate
                     dbCategory.Children.Add(child);
 
                     transaction.Commit();
-                }                
+                }
             }
             else
             {
@@ -98,7 +98,7 @@ namespace StoreNHibernate
 
                     session.Save(root);
                     transaction.Commit();
-                }                
+                }
             }
             GetCategories();
         }

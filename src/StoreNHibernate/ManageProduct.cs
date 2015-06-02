@@ -2,9 +2,9 @@
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using FluentNHibernate.Mapping;
+using Model;
 using NHibernate;
 using NHibernate.Tool.hbm2ddl;
-using StoreNHibernate.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;

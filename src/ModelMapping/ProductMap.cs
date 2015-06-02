@@ -1,14 +1,14 @@
 ﻿using FluentNHibernate;
 using FluentNHibernate.Mapping;
+using Model;
 using NHibernate;
-using StoreNHibernate.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StoreNHibernate.Mapping
+namespace ModelMapping
 {
     public class ProductMap : ClassMap<Product>
     {

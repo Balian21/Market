@@ -200,11 +200,11 @@
             // 
             // productBindingSource1
             // 
-            this.productBindingSource1.DataSource = typeof(StoreNHibernate.Model.Product);
+            this.productBindingSource1.DataSource = typeof(Model.Product);
             // 
             // productBindingSource
             // 
-            this.productBindingSource.DataSource = typeof(StoreNHibernate.Model.Category);
+            this.productBindingSource.DataSource = typeof(Model.Category);
             // 
             // RemoveCategoryToolStripMenuItem
             // 

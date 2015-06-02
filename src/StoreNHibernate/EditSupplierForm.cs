@@ -1,4 +1,4 @@
-﻿using StoreNHibernate.Model;
+﻿using Model;
 using NHibernate;
 using System;
 using System.Collections.Generic;
@@ -15,7 +15,8 @@ namespace StoreNHibernate
     public partial class EditSupplierForm : Form
     {
         public Supplier supplier;
-        ManageSupplier manageSupplier = new ManageSupplier();
+        private ManageSupplier manageSupplier = new ManageSupplier();
+
         public EditSupplierForm(Supplier supplier)
         {
             InitializeComponent();

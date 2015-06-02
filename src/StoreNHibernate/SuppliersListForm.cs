@@ -1,4 +1,4 @@
-﻿using StoreNHibernate.Model;
+﻿using Model;
 using NHibernate;
 using System;
 using System.Collections.Generic;
@@ -14,7 +14,8 @@ namespace StoreNHibernate
 {
     public partial class SuppliersListForm : Form
     {
-        ManageSupplier manageSupplier = new ManageSupplier();
+        private ManageSupplier manageSupplier = new ManageSupplier();
+
         public SuppliersListForm()
         {
             InitializeComponent();
@@ -49,9 +50,9 @@ namespace StoreNHibernate
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            using(AddSupplierForm addSupplierForm = new AddSupplierForm())
+            using (AddSupplierForm addSupplierForm = new AddSupplierForm())
             {
-                if(addSupplierForm.ShowDialog() == DialogResult.OK)
+                if (addSupplierForm.ShowDialog() == DialogResult.OK)
                 {
                     GetSuppliers();
                 }

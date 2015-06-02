@@ -1,4 +1,4 @@
-﻿using StoreNHibernate.Model;
+﻿using Model;
 using NHibernate;
 using System;
 using System.Collections.Generic;
@@ -21,6 +21,7 @@ namespace StoreNHibernate
                 }
             }
         }
+
         public void DeleteSupplier(Supplier supplier)
         {
             using (ISession session = NHibernateHelper.OpenSession())
@@ -32,6 +33,7 @@ namespace StoreNHibernate
                 }
             }
         }
+
         public void UpdateSupplier(Supplier supplier)
         {
             using (ISession session = NHibernateHelper.OpenSession())
