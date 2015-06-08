@@ -13,15 +13,14 @@
 <body>
     <div class="layout">
         <div class="btn-group">
-            <button type="button" class="btn btn-default">Главная</button>
-            <button type="button" class="btn btn-default">Каталог</button>
+            <button type="button" class="btn btn-default">@Html.ActionLink("Главная", "Index", "Home")</button>
+            <button type="button" class="btn btn-default">@Html.ActionLink("Каталог", "Categories", "Category")</button>
             <button type="button" class="btn btn-default">Скидки</button>
             <button type="button" class="btn btn-default">Доставка</button>
             <button type="button" class="btn btn-default">Оплата</button>
             <button type="button" class="btn btn-default">Гарантия и возврат</button>
             <button type="button" class="btn btn-default">Контакты</button>
         </div>
-
 
         @RenderBody()
 
