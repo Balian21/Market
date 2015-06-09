@@ -25,5 +25,26 @@ namespace MySite.Controllers
                 return View(categories);
             }
         }
+
+        public ActionResult Browse(Category category)
+        {
+            using (ISession session = NHibernateHelper.OpenSession())
+            {
+                var products = session.Query<Product>()
+                                    .Where(p => p.Category == category);
+                return View(products);
+            }
+        }
+
+        public ViewResult ProductListCurrentCategory(Category category)
+        {
+            using (ISession session = NHibernateHelper.OpenSession())
+            {
+                var products = session.Query<Product>()
+                            .Where(p => p.Category == category)
+                            .ToList();
+                return View(products);
+            }
+        }
     }
 }
