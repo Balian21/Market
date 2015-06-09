@@ -20,6 +20,8 @@ namespace Model
 
         public virtual int Availability { get; set; }
 
+        public virtual byte[] ImageData { get; set; }
+
         public override string ToString()
         {
             return Name;
