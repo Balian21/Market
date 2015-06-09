@@ -26,25 +26,18 @@ namespace MySite.Controllers
             }
         }
 
-        public ActionResult Browse(Category category)
+        public ActionResult ShowProductList(int? id)
         {
             using (ISession session = NHibernateHelper.OpenSession())
             {
-                var products = session.Query<Product>()
-                                    .Where(p => p.Category == category);
-                return View(products);
-            }
-        }
+                //var currentCategory = session.Query<Category>()
+                //                    .Where(p => p.Id == id);
 
-        public ViewResult ProductListCurrentCategory(Category category)
-        {
-            using (ISession session = NHibernateHelper.OpenSession())
-            {
                 var products = session.Query<Product>()
-                            .Where(p => p.Category == category)
-                            .ToList();
+                                .Where(p => p.Category.Id == id)
+                                .ToList();
                 return View(products);
             }
-        }
+        }        
     }
 }

@@ -33,8 +33,8 @@ namespace MySite
         {
             sessionFactory = Fluently.Configure()
                             .Database(MsSqlConfiguration.MsSql2008
-                //.ConnectionString(@"Data Source=АЛЕКСЕЙ-ПК;Initial Catalog=StoreNHibernate;Integrated Security=True"))
-                .ConnectionString(@"Data Source=IVANOVO02\SQLEXPRESS;Initial Catalog=StoreNHibernate;Integrated Security=True"))
+                .ConnectionString(@"Data Source=АЛЕКСЕЙ-ПК;Initial Catalog=StoreNHibernate;Integrated Security=True"))
+                //.ConnectionString(@"Data Source=IVANOVO02\SQLEXPRESS;Initial Catalog=StoreNHibernate;Integrated Security=True"))
                             .Mappings(m => m.FluentMappings.AddFromAssemblyOf<ModelMapping.ProductMap>())
                 //.ExposeConfiguration(cfg => new SchemaExport(cfg).Create(true, true))
                 //.ExposeConfiguration(cfg => new SchemaUpdate(cfg).Execute(true, true))

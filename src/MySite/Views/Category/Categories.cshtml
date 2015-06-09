@@ -1,0 +1,22 @@
+﻿@model IEnumerable<Model.Category>
+
+@{
+    ViewBag.Title = "Categories";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Categories</h2>
+
+@foreach (var item in Model) 
+{
+    <tr>
+        <td>           
+
+            @Html.ActionLink(item.Name, "ShowProductList", "Category", new { id = item.Id}, null)
+            
+        </td>        
+    </tr>
+}
+
+
+

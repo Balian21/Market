@@ -262,11 +262,12 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Product\Products.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Category\Categories.cshtml" />
+    <Content Include="Views\Category\ShowProductList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Category\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
