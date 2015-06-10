@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,9 +14,13 @@ namespace StoreNHibernate
 {
     public partial class SelectImageForm : Form
     {
-        public SelectImageForm()
+        public Product product;
+
+        public SelectImageForm(Product product)
         {
             InitializeComponent();
+
+            this.product = product;
         }
 
         private void SelectImageForm_Load(object sender, EventArgs e)
@@ -31,6 +37,21 @@ namespace StoreNHibernate
                 textBox1.Text = openFileDialog1.FileName;
                 pictureBox1.Load(textBox1.Text);
             }
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonOk_Click(object sender, EventArgs e)
+        {
+            MemoryStream memoryStream = new MemoryStream();
+            pictureBox1.Image.Save(memoryStream, pictureBox1.Image.RawFormat);
+            byte[] temp = memoryStream.GetBuffer();
+            product.ImageData = temp;
+
+            DialogResult = DialogResult.OK;
         }
     }
 }

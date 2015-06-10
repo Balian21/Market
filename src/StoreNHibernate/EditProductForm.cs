@@ -78,8 +78,13 @@ namespace StoreNHibernate
 
         private void buttonChange_Click(object sender, EventArgs e)
         {
-            SelectImageForm selectImageForm = new SelectImageForm();
-            selectImageForm.ShowDialog();
+            using (SelectImageForm selectImageForm = new SelectImageForm(product))
+            {
+                if (selectImageForm.ShowDialog() == DialogResult.OK)
+                {
+                    manageProduct.UpdateProduct(product);
+                }
+            }
         }
     }
 }
