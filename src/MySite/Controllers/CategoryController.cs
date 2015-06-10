@@ -15,7 +15,7 @@ namespace MySite.Controllers
         //
         // GET: /Category/
 
-        public ActionResult Categories()
+        public ActionResult Show()
         {
             using (ISession session = NHibernateHelper.OpenSession())
             {
@@ -26,7 +26,7 @@ namespace MySite.Controllers
             }
         }
 
-        public ActionResult ShowProductList(int? id)
+        public ActionResult ProductList(int? id)
         {
             using (ISession session = NHibernateHelper.OpenSession())
             {
@@ -38,6 +38,6 @@ namespace MySite.Controllers
                                 .ToList();
                 return View(products);
             }
-        }        
+        }
     }
 }

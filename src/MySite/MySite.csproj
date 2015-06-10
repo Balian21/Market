@@ -153,7 +153,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -260,10 +259,9 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Product\Products.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Category\Categories.cshtml" />
-    <Content Include="Views\Category\ShowProductList.cshtml" />
+    <Content Include="Views\Category\Show.cshtml" />
+    <Content Include="Views\Category\ProductList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
