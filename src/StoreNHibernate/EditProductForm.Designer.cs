@@ -39,7 +39,11 @@
             this.buttonSelectingCategory = new System.Windows.Forms.Button();
             this.buttonSelectingSupplier = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonChange = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxProductName
@@ -78,9 +82,9 @@
             // 
             // buttonOK
             // 
-            this.buttonOK.Location = new System.Drawing.Point(481, 239);
+            this.buttonOK.Location = new System.Drawing.Point(669, 306);
             this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(75, 31);
+            this.buttonOK.Size = new System.Drawing.Size(103, 31);
             this.buttonOK.TabIndex = 3;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
@@ -88,9 +92,9 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(562, 239);
+            this.buttonCancel.Location = new System.Drawing.Point(780, 306);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 31);
+            this.buttonCancel.Size = new System.Drawing.Size(105, 31);
             this.buttonCancel.TabIndex = 3;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -145,12 +149,36 @@
             this.panel1.Size = new System.Drawing.Size(613, 157);
             this.panel1.TabIndex = 7;
             // 
+            // buttonChange
+            // 
+            this.buttonChange.Location = new System.Drawing.Point(810, 215);
+            this.buttonChange.Name = "buttonChange";
+            this.buttonChange.Size = new System.Drawing.Size(75, 23);
+            this.buttonChange.TabIndex = 9;
+            this.buttonChange.Text = "Изменить";
+            this.buttonChange.UseVisualStyleBackColor = true;
+            this.buttonChange.Click += new System.EventHandler(this.buttonChange_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(687, 23);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(198, 186);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
             // EditProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(666, 292);
+            this.ClientSize = new System.Drawing.Size(914, 349);
             this.ControlBox = false;
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.buttonChange);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonCancel);
@@ -159,6 +187,7 @@
             this.Text = "Редактировать продукт";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -176,5 +205,8 @@
         private System.Windows.Forms.Button buttonSelectingCategory;
         private System.Windows.Forms.Button buttonSelectingSupplier;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button buttonChange;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
