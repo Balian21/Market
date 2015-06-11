@@ -68,6 +68,10 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.textBoxCategory);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(388, 204);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(388, 204);
             this.Name = "EditCategoryForm";
             this.Text = "Редактировать категорию";
             this.ResumeLayout(false);

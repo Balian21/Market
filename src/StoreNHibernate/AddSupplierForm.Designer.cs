@@ -79,6 +79,10 @@
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxSupplierName);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(313, 276);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(313, 276);
             this.Name = "AddSupplierForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление поставщика";

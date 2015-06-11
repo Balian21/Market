@@ -75,11 +75,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 228);
-            this.ControlBox = false;
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOk);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxSupplierName);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(308, 266);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(308, 266);
             this.Name = "EditSupplierForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Редактирование поставщика";

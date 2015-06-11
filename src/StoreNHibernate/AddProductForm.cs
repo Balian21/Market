@@ -19,6 +19,7 @@ namespace StoreNHibernate
         public SelectCategoryForm selectCategoryForm;
         private List<Category> categoriesList = new List<Category>();
         private List<Supplier> suppliersList = new List<Supplier>();
+        private ImageConverter converter = new ImageConverter();
 
         public AddProductForm()
         {
@@ -66,6 +67,17 @@ namespace StoreNHibernate
         private void cancelButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void buttonChange_Click(object sender, EventArgs e)
+        {
+            using (SelectImageForm selectImageForm = new SelectImageForm(product))
+            {
+                if (selectImageForm.ShowDialog() == DialogResult.OK)
+                {
+                    pictureBox1.Image = (Image)converter.ConvertFrom(product.ImageData);
+                }
+            }
         }
     }
 }

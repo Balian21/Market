@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProductForm));
             this.productLabel = new System.Windows.Forms.Label();
             this.categoryLabel = new System.Windows.Forms.Label();
             this.supplierLabel = new System.Windows.Forms.Label();
@@ -39,7 +40,10 @@
             this.textBoxCategory = new System.Windows.Forms.TextBox();
             this.buttonSelectingCategory = new System.Windows.Forms.Button();
             this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonChange = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // productLabel
@@ -88,9 +92,9 @@
             // 
             // okButton
             // 
-            this.okButton.Location = new System.Drawing.Point(273, 163);
+            this.okButton.Location = new System.Drawing.Point(370, 336);
             this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(75, 23);
+            this.okButton.Size = new System.Drawing.Size(75, 30);
             this.okButton.TabIndex = 4;
             this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = true;
@@ -98,9 +102,9 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(371, 163);
+            this.cancelButton.Location = new System.Drawing.Point(468, 336);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.Size = new System.Drawing.Size(75, 30);
             this.cancelButton.TabIndex = 4;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -128,12 +132,33 @@
             // 
             this.categoryBindingSource.DataSource = typeof(Model.Category);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(357, 25);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(186, 176);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // buttonChange
+            // 
+            this.buttonChange.Location = new System.Drawing.Point(468, 223);
+            this.buttonChange.Name = "buttonChange";
+            this.buttonChange.Size = new System.Drawing.Size(75, 23);
+            this.buttonChange.TabIndex = 8;
+            this.buttonChange.Text = "Изменить";
+            this.buttonChange.UseVisualStyleBackColor = true;
+            this.buttonChange.Click += new System.EventHandler(this.buttonChange_Click);
+            // 
             // AddProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(469, 198);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(567, 389);
+            this.Controls.Add(this.buttonChange);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonSelectingCategory);
             this.Controls.Add(this.textBoxCategory);
             this.Controls.Add(this.cancelButton);
@@ -143,11 +168,16 @@
             this.Controls.Add(this.supplierLabel);
             this.Controls.Add(this.categoryLabel);
             this.Controls.Add(this.productLabel);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(583, 427);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(583, 427);
             this.Name = "AddProductForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Добавление продукта";
             this.Load += new System.EventHandler(this.AddProductForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -165,5 +195,7 @@
         public System.Windows.Forms.TextBox productTextBox;
         private System.Windows.Forms.TextBox textBoxCategory;
         private System.Windows.Forms.Button buttonSelectingCategory;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button buttonChange;
     }
 }
