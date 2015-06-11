@@ -110,6 +110,7 @@
             // 
             this.textBoxCategory.Location = new System.Drawing.Point(82, 70);
             this.textBoxCategory.Name = "textBoxCategory";
+            this.textBoxCategory.ReadOnly = true;
             this.textBoxCategory.Size = new System.Drawing.Size(171, 20);
             this.textBoxCategory.TabIndex = 5;
             // 

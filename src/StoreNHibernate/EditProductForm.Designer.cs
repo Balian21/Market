@@ -104,6 +104,7 @@
             // 
             this.textBoxSupplierName.Location = new System.Drawing.Point(80, 111);
             this.textBoxSupplierName.Name = "textBoxSupplierName";
+            this.textBoxSupplierName.ReadOnly = true;
             this.textBoxSupplierName.Size = new System.Drawing.Size(486, 20);
             this.textBoxSupplierName.TabIndex = 4;
             // 
@@ -111,6 +112,7 @@
             // 
             this.textBoxCategoryName.Location = new System.Drawing.Point(80, 67);
             this.textBoxCategoryName.Name = "textBoxCategoryName";
+            this.textBoxCategoryName.ReadOnly = true;
             this.textBoxCategoryName.Size = new System.Drawing.Size(486, 20);
             this.textBoxCategoryName.TabIndex = 4;
             // 

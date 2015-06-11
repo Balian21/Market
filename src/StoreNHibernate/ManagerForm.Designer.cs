@@ -33,6 +33,7 @@
             this.treeViewCategories = new System.Windows.Forms.TreeView();
             this.contextMenuTree = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.AddToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.RemoveCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewProducts = new System.Windows.Forms.DataGridView();
             this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Supplier = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +48,6 @@
             this.SuppliersListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.RemoveCategoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuTree.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProducts)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -60,7 +60,6 @@
             // treeViewCategories
             // 
             this.treeViewCategories.ContextMenuStrip = this.contextMenuTree;
-            this.treeViewCategories.LabelEdit = true;
             this.treeViewCategories.Location = new System.Drawing.Point(12, 108);
             this.treeViewCategories.Name = "treeViewCategories";
             this.treeViewCategories.Size = new System.Drawing.Size(287, 500);
@@ -74,7 +73,7 @@
             this.AddToolStripMenuItem,
             this.RemoveCategoryToolStripMenuItem});
             this.contextMenuTree.Name = "contextMenuTree";
-            this.contextMenuTree.Size = new System.Drawing.Size(189, 70);
+            this.contextMenuTree.Size = new System.Drawing.Size(189, 48);
             // 
             // AddToolStripMenuItem
             // 
@@ -82,6 +81,13 @@
             this.AddToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.AddToolStripMenuItem.Text = "Добавить категорию";
             this.AddToolStripMenuItem.Click += new System.EventHandler(this.AddToolStripMenuItem_Click);
+            // 
+            // RemoveCategoryToolStripMenuItem
+            // 
+            this.RemoveCategoryToolStripMenuItem.Name = "RemoveCategoryToolStripMenuItem";
+            this.RemoveCategoryToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.RemoveCategoryToolStripMenuItem.Text = "Удалить категорию";
+            this.RemoveCategoryToolStripMenuItem.Click += new System.EventHandler(this.RemoveCategoryToolStripMenuItem_Click);
             // 
             // dataGridViewProducts
             // 
@@ -205,13 +211,6 @@
             // productBindingSource
             // 
             this.productBindingSource.DataSource = typeof(Model.Category);
-            // 
-            // RemoveCategoryToolStripMenuItem
-            // 
-            this.RemoveCategoryToolStripMenuItem.Name = "RemoveCategoryToolStripMenuItem";
-            this.RemoveCategoryToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.RemoveCategoryToolStripMenuItem.Text = "Удалить категорию";
-            this.RemoveCategoryToolStripMenuItem.Click += new System.EventHandler(this.RemoveCategoryToolStripMenuItem_Click);
             // 
             // ManagerForm
             // 
