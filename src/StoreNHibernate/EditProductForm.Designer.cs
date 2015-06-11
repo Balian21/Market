@@ -43,6 +43,11 @@
             this.buttonChange = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxAvailability = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxPrice = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -139,9 +144,14 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBoxAvailability);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textBoxProductName);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.labelProductName);
             this.panel1.Controls.Add(this.buttonSelectingCategory);
+            this.panel1.Controls.Add(this.textBoxPrice);
             this.panel1.Controls.Add(this.buttonSelectingSupplier);
             this.panel1.Controls.Add(this.textBoxCategoryName);
             this.panel1.Controls.Add(this.labelCategoryName);
@@ -149,7 +159,7 @@
             this.panel1.Controls.Add(this.textBoxSupplierName);
             this.panel1.Location = new System.Drawing.Point(25, 23);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(613, 157);
+            this.panel1.Size = new System.Drawing.Size(613, 245);
             this.panel1.TabIndex = 7;
             // 
             // buttonChange
@@ -175,6 +185,49 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(186, 154);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(27, 13);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "руб.";
+            // 
+            // textBoxAvailability
+            // 
+            this.textBoxAvailability.Location = new System.Drawing.Point(80, 189);
+            this.textBoxAvailability.Name = "textBoxAvailability";
+            this.textBoxAvailability.Size = new System.Drawing.Size(73, 20);
+            this.textBoxAvailability.TabIndex = 17;
+            this.textBoxAvailability.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAvailability_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(14, 192);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Наличие";
+            // 
+            // textBoxPrice
+            // 
+            this.textBoxPrice.Location = new System.Drawing.Point(80, 151);
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPrice.TabIndex = 15;
+            this.textBoxPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrice_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 154);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Цена";
             // 
             // EditProductForm
             // 
@@ -216,5 +269,10 @@
         private System.Windows.Forms.Button buttonChange;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox textBoxAvailability;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxPrice;
     }
 }

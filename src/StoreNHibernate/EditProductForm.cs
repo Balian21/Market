@@ -35,6 +35,11 @@ namespace StoreNHibernate
 
             textBoxSupplierName.Text = product.Supplier.Name;
 
+            product.Price = Math.Round(product.Price, 2);
+            textBoxPrice.Text = product.Price.ToString();
+
+            textBoxAvailability.Text = product.Availability.ToString();
+
             if (product.ImageData != null)
             {
                 pictureBox1.Image = (Image)converter.ConvertFrom(product.ImageData);
@@ -68,6 +73,8 @@ namespace StoreNHibernate
             if (textBoxCategoryName.Text == category.Name && textBoxCategoryName.Tag == category) // если категория не менялась, то условие true
             {
                 this.product.Name = textBoxProductName.Text;
+                product.Availability = Convert.ToInt32(textBoxAvailability.Text);
+                product.Price = Convert.ToDecimal(textBoxPrice.Text);
 
                 manageProduct.UpdateProduct(this.product);
             }
@@ -75,6 +82,8 @@ namespace StoreNHibernate
             {
                 this.product.Name = textBoxProductName.Text;
                 this.product.Category = textBoxCategoryName.Tag as Category;
+                product.Availability = Convert.ToInt32(textBoxAvailability.Text);
+                product.Price = Convert.ToDecimal(textBoxPrice.Text);
                 manageProduct.UpdateProduct(this.product);
             }
 
@@ -95,6 +104,18 @@ namespace StoreNHibernate
                     pictureBox1.Image = (Image)converter.ConvertFrom(product.ImageData);
                 }
             }
+        }
+
+        private void textBoxPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && e.KeyChar != 8)
+                e.Handled = true;
+        }
+
+        private void textBoxAvailability_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && e.KeyChar != 8)
+                e.Handled = true;
         }
     }
 }

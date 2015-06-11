@@ -42,6 +42,11 @@
             this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonChange = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxPrice = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxAvailability = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -49,29 +54,29 @@
             // productLabel
             // 
             this.productLabel.AutoSize = true;
-            this.productLabel.Location = new System.Drawing.Point(24, 28);
+            this.productLabel.Location = new System.Drawing.Point(12, 28);
             this.productLabel.Name = "productLabel";
-            this.productLabel.Size = new System.Drawing.Size(44, 13);
+            this.productLabel.Size = new System.Drawing.Size(49, 13);
             this.productLabel.TabIndex = 0;
-            this.productLabel.Text = "Product";
+            this.productLabel.Text = "Продукт";
             // 
             // categoryLabel
             // 
             this.categoryLabel.AutoSize = true;
-            this.categoryLabel.Location = new System.Drawing.Point(24, 73);
+            this.categoryLabel.Location = new System.Drawing.Point(12, 73);
             this.categoryLabel.Name = "categoryLabel";
-            this.categoryLabel.Size = new System.Drawing.Size(49, 13);
+            this.categoryLabel.Size = new System.Drawing.Size(60, 13);
             this.categoryLabel.TabIndex = 0;
-            this.categoryLabel.Text = "Category";
+            this.categoryLabel.Text = "Категория";
             // 
             // supplierLabel
             // 
             this.supplierLabel.AutoSize = true;
-            this.supplierLabel.Location = new System.Drawing.Point(24, 125);
+            this.supplierLabel.Location = new System.Drawing.Point(12, 125);
             this.supplierLabel.Name = "supplierLabel";
-            this.supplierLabel.Size = new System.Drawing.Size(45, 13);
+            this.supplierLabel.Size = new System.Drawing.Size(65, 13);
             this.supplierLabel.TabIndex = 0;
-            this.supplierLabel.Text = "Supplier";
+            this.supplierLabel.Text = "Поставщик";
             // 
             // productTextBox
             // 
@@ -152,11 +157,59 @@
             this.buttonChange.UseVisualStyleBackColor = true;
             this.buttonChange.Click += new System.EventHandler(this.buttonChange_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 160);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Цена";
+            // 
+            // textBoxPrice
+            // 
+            this.textBoxPrice.Location = new System.Drawing.Point(82, 157);
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPrice.TabIndex = 10;
+            this.textBoxPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrice_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 199);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Наличие";
+            // 
+            // textBoxAvailability
+            // 
+            this.textBoxAvailability.Location = new System.Drawing.Point(82, 196);
+            this.textBoxAvailability.Name = "textBoxAvailability";
+            this.textBoxAvailability.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAvailability.TabIndex = 12;
+            this.textBoxAvailability.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAvailability_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(188, 160);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(27, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "руб.";
+            // 
             // AddProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 389);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.textBoxAvailability);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBoxPrice);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonChange);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonSelectingCategory);
@@ -197,5 +250,10 @@
         private System.Windows.Forms.Button buttonSelectingCategory;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonChange;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBoxPrice;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxAvailability;
+        private System.Windows.Forms.Label label3;
     }
 }

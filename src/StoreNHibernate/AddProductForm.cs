@@ -42,6 +42,8 @@ namespace StoreNHibernate
 
             product.Category = textBoxCategory.Tag as Category;
             product.Supplier = suppliersComboBox.SelectedItem as Supplier;
+            product.Price = Convert.ToDecimal(textBoxPrice.Text);
+            product.Availability = Convert.ToInt32(textBoxAvailability.Text);
 
             DialogResult = DialogResult.OK;
 
@@ -78,6 +80,18 @@ namespace StoreNHibernate
                     pictureBox1.Image = (Image)converter.ConvertFrom(product.ImageData);
                 }
             }
+        }
+
+        private void textBoxPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && e.KeyChar != 8)
+                e.Handled = true;
+        }
+
+        private void textBoxAvailability_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar <= 47 || e.KeyChar >= 58) && e.KeyChar != 8)
+                e.Handled = true;
         }
     }
 }
