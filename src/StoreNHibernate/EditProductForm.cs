@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+
+using System.Drawing;
+
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +21,7 @@ namespace StoreNHibernate
         public Category category;
         public SelectCategoryForm selectCategoryForm;
         public ManageProduct manageProduct = new ManageProduct();
+        private ImageConverter converter = new ImageConverter();
 
         public EditProductForm(Product product)
         {
@@ -29,6 +34,11 @@ namespace StoreNHibernate
             textBoxCategoryName.Tag = product.Category;
 
             textBoxSupplierName.Text = product.Supplier.Name;
+
+            if (product.ImageData != null)
+            {
+                pictureBox1.Image = (Image)converter.ConvertFrom(product.ImageData);
+            }
 
             category = product.Category; // запомнить категорию продукта на случай измениний
         }
@@ -82,7 +92,7 @@ namespace StoreNHibernate
             {
                 if (selectImageForm.ShowDialog() == DialogResult.OK)
                 {
-                    manageProduct.UpdateProduct(product);
+                    pictureBox1.Image = (Image)converter.ConvertFrom(product.ImageData);
                 }
             }
         }

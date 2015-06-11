@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+
+using System.Drawing;
+
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -15,6 +18,7 @@ namespace StoreNHibernate
     public partial class SelectImageForm : Form
     {
         public Product product;
+        private ImageConverter converter = new ImageConverter();
 
         public SelectImageForm(Product product)
         {
@@ -28,6 +32,8 @@ namespace StoreNHibernate
             openFileDialog1.Title = "Выбор изображения";
             openFileDialog1.InitialDirectory = @"C:\";
             openFileDialog1.Filter = "Images (*.BMP;*.JPG;*.GIF)|*.BMP;*.JPG;*.GIF|" + "All files (*.*)|*.*";
+
+            pictureBox1.Image = (Image)converter.ConvertFrom(product.ImageData);
         }
 
         private void buttonSelect_Click(object sender, EventArgs e)
