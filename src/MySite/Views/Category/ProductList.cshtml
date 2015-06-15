@@ -5,11 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<ul>
+
     @foreach (var item in Model)
     {
-        <li>
-            @Html.DisplayFor(modelItem => item.Name)
-        </li>
+        
+            <div style="margin: 20px 0 20px 0; border: 1px solid grey;">
+                <img width="75" height="75" src="@Url.Action("GetImage", "Product", new { item.Id })" />
+                @Html.DisplayFor(modelItem => item.Name)
+            </div>
+            
+        
     }
-</ul>
