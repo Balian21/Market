@@ -57,6 +57,19 @@ namespace StoreNHibernate
             byte[] temp = memoryStream.GetBuffer();
             product.ImageData = temp;
 
+            if (pictureBox1.Image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Jpeg))
+            {
+                product.ImageMimeType = "image/jpeg";
+            }
+            else if (pictureBox1.Image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Png))
+            {
+                product.ImageMimeType = "image/png";
+            }
+            else if (pictureBox1.Image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Gif))
+            {
+                product.ImageMimeType = "image/gif";
+            }
+
             DialogResult = DialogResult.OK;
         }
     }

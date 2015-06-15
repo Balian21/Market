@@ -17,9 +17,9 @@ namespace MySite.Controllers
             {
                 var product = session.Query<Product>()
                                 .FirstOrDefault(p => p.Id == id);
-                if (product != null)
+                if (product != null && product.ImageMimeType != null)
                 {
-                    return File(product.ImageData, "test");
+                    return File(product.ImageData, product.ImageMimeType);
                 }
                 else
                 {
