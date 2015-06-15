@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "ShowProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="margin: 20px 0 20px 0; border: 1px solid grey;">
+    <img width="75" height="75" src="@Url.Action("GetImage", "Product", new { Model.Id }, null)" />
+</div>
+<h2>@Model.Name</h2>
+<p>Цена: @Model.Price рублей</p>
+<p>Наличие: @Model.Availability шт.</p>

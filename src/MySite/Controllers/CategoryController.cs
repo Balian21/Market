@@ -30,9 +30,6 @@ namespace MySite.Controllers
         {
             using (ISession session = NHibernateHelper.OpenSession())
             {
-                //var currentCategory = session.Query<Category>()
-                //                    .Where(p => p.Id == id);
-
                 var products = session.Query<Product>()
                                 .Where(p => p.Category.Id == id)
                                 .ToList();

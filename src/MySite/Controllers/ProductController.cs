@@ -27,5 +27,15 @@ namespace MySite.Controllers
                 }
             }
         }
+
+        public ActionResult ShowProduct(int? id)
+        {
+            using (ISession session = NHibernateHelper.OpenSession())
+            {
+                var product = session.Query<Product>()
+                                .FirstOrDefault(p => p.Id == id);
+                return View(product);
+            }
+        }
     }
 }
