@@ -19,6 +19,7 @@ namespace ModelMapping
             Map(x => x.Price);
             Map(x => x.Availability);
             Map(x => x.ImageData).Length(int.MaxValue);
+            Map(x => x.ImageMimeType);
             References(x => x.Category);
             References(x => x.Supplier);
         }

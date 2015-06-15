@@ -22,6 +22,8 @@ namespace Model
 
         public virtual byte[] ImageData { get; set; }
 
+        public virtual string ImageMimeType { get; set; }
+
         public override string ToString()
         {
             return Name;
