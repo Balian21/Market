@@ -2,6 +2,8 @@
 using Model;
 using NHibernate;
 using NHibernate.Linq;
+using PagedList;
+using PagedList.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +36,23 @@ namespace MySite.Controllers
                                 .Where(p => p.Category.Id == id)
                                 .ToList();
                 return View(products);
+            }
+        }
+
+        public ActionResult PagedList(int? page)
+        {
+            using (ISession session = NHibernateHelper.OpenSession())
+            {
+                //var products = session.Query<Product>()
+                //                .Where(p => p.Category.Id == id)
+                //                .ToList();
+
+                var model = session.QueryOver<Product>().Where(p => p.Availability != null).List();
+
+                int pageNumber = page ?? 1;
+                int pageSize = 5;
+
+                return View(model.ToPagedList(pageNumber, pageSize));
             }
         }
     }
