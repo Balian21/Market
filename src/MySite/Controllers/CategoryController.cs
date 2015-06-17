@@ -28,7 +28,7 @@ namespace MySite.Controllers
             }
         }
 
-        public ActionResult ProductList(int? id)
+        public ActionResult ProductList(int? id) // не используется
         {
             using (ISession session = NHibernateHelper.OpenSession())
             {
@@ -39,20 +39,27 @@ namespace MySite.Controllers
             }
         }
 
-        public ActionResult PagedList(int? page)
+        public ActionResult PagedList(int? page, int? id)
         {
             using (ISession session = NHibernateHelper.OpenSession())
             {
-                //var products = session.Query<Product>()
-                //                .Where(p => p.Category.Id == id)
-                //                .ToList();
-
                 var model = session.QueryOver<Product>().Where(p => p.Availability != null).List();
 
                 int pageNumber = page ?? 1;
                 int pageSize = 5;
 
-                return View(model.ToPagedList(pageNumber, pageSize));
+                return View(CurrentProducts(id).ToPagedList(pageNumber, pageSize)); // выводим постранично продукты выбранной категории
+            }
+        }
+
+        public IList<Product> CurrentProducts(int? id) //возвращает продукты выбранной категории
+        {
+            using (ISession session = NHibernateHelper.OpenSession())
+            {
+                var products = session.Query<Product>()
+                                .Where(p => p.Category.Id == id)
+                                .ToList();
+                return products;
             }
         }
     }
