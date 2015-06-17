@@ -269,7 +269,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Category\Show.cshtml" />
-    <Content Include="Views\Category\ProductList.cshtml" />
     <Content Include="Views\Product\ShowProduct.cshtml" />
     <Content Include="Views\Category\PagedList.cshtml" />
   </ItemGroup>

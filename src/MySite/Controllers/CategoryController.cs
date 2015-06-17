@@ -28,17 +28,6 @@ namespace MySite.Controllers
             }
         }
 
-        public ActionResult ProductList(int? id) // не используется
-        {
-            using (ISession session = NHibernateHelper.OpenSession())
-            {
-                var products = session.Query<Product>()
-                                .Where(p => p.Category.Id == id)
-                                .ToList();
-                return View(products);
-            }
-        }
-
         public ActionResult PagedList(int? page, int? id)
         {
             using (ISession session = NHibernateHelper.OpenSession())

@@ -13,7 +13,10 @@
 
 @foreach (var item in Model)
 {
-    <p>@item.Name</p>
+    <div style="margin: 20px 0 20px 0; border: 1px solid grey;">
+        <img width="75" height="75" src="@Url.Action("GetImage", "Product", new { item.Id })" />
+        @Html.ActionLink((string)item.Name, "ShowProduct", "Product", new { item.Id }, null)
+    </div>
 }
 
 <div style="text-align: center;">
