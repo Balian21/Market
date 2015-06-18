@@ -35,19 +35,18 @@
             this.labelSupplierName = new System.Windows.Forms.Label();
             this.buttonOK = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.textBoxSupplierName = new System.Windows.Forms.TextBox();
             this.textBoxCategoryName = new System.Windows.Forms.TextBox();
             this.buttonSelectingCategory = new System.Windows.Forms.Button();
-            this.buttonSelectingSupplier = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxAvailability = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.buttonChange = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxAvailability = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxPrice = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.suppliersComboBox = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -106,14 +105,6 @@
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // textBoxSupplierName
-            // 
-            this.textBoxSupplierName.Location = new System.Drawing.Point(80, 111);
-            this.textBoxSupplierName.Name = "textBoxSupplierName";
-            this.textBoxSupplierName.ReadOnly = true;
-            this.textBoxSupplierName.Size = new System.Drawing.Size(486, 20);
-            this.textBoxSupplierName.TabIndex = 4;
-            // 
             // textBoxCategoryName
             // 
             this.textBoxCategoryName.Location = new System.Drawing.Point(80, 67);
@@ -132,18 +123,9 @@
             this.buttonSelectingCategory.UseVisualStyleBackColor = true;
             this.buttonSelectingCategory.Click += new System.EventHandler(this.buttonSelectingCategory_Click);
             // 
-            // buttonSelectingSupplier
-            // 
-            this.buttonSelectingSupplier.Location = new System.Drawing.Point(581, 108);
-            this.buttonSelectingSupplier.Name = "buttonSelectingSupplier";
-            this.buttonSelectingSupplier.Size = new System.Drawing.Size(25, 25);
-            this.buttonSelectingSupplier.TabIndex = 6;
-            this.buttonSelectingSupplier.Text = "...";
-            this.buttonSelectingSupplier.UseVisualStyleBackColor = true;
-            this.buttonSelectingSupplier.Click += new System.EventHandler(this.buttonSelectingSupplier_Click);
-            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.suppliersComboBox);
             this.panel1.Controls.Add(this.textBoxAvailability);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -152,15 +134,56 @@
             this.panel1.Controls.Add(this.labelProductName);
             this.panel1.Controls.Add(this.buttonSelectingCategory);
             this.panel1.Controls.Add(this.textBoxPrice);
-            this.panel1.Controls.Add(this.buttonSelectingSupplier);
             this.panel1.Controls.Add(this.textBoxCategoryName);
             this.panel1.Controls.Add(this.labelCategoryName);
             this.panel1.Controls.Add(this.labelSupplierName);
-            this.panel1.Controls.Add(this.textBoxSupplierName);
             this.panel1.Location = new System.Drawing.Point(25, 23);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(613, 245);
             this.panel1.TabIndex = 7;
+            // 
+            // textBoxAvailability
+            // 
+            this.textBoxAvailability.Location = new System.Drawing.Point(80, 189);
+            this.textBoxAvailability.Name = "textBoxAvailability";
+            this.textBoxAvailability.Size = new System.Drawing.Size(73, 20);
+            this.textBoxAvailability.TabIndex = 17;
+            this.textBoxAvailability.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAvailability_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(186, 154);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(27, 13);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "руб.";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(14, 192);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Наличие";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(14, 154);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Цена";
+            // 
+            // textBoxPrice
+            // 
+            this.textBoxPrice.Location = new System.Drawing.Point(80, 151);
+            this.textBoxPrice.Name = "textBoxPrice";
+            this.textBoxPrice.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPrice.TabIndex = 15;
+            this.textBoxPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrice_KeyPress);
             // 
             // buttonChange
             // 
@@ -186,48 +209,14 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
-            // label3
+            // suppliersComboBox
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(186, 154);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 13);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "руб.";
-            // 
-            // textBoxAvailability
-            // 
-            this.textBoxAvailability.Location = new System.Drawing.Point(80, 189);
-            this.textBoxAvailability.Name = "textBoxAvailability";
-            this.textBoxAvailability.Size = new System.Drawing.Size(73, 20);
-            this.textBoxAvailability.TabIndex = 17;
-            this.textBoxAvailability.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAvailability_KeyPress);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 192);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 13);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Наличие";
-            // 
-            // textBoxPrice
-            // 
-            this.textBoxPrice.Location = new System.Drawing.Point(80, 151);
-            this.textBoxPrice.Name = "textBoxPrice";
-            this.textBoxPrice.Size = new System.Drawing.Size(100, 20);
-            this.textBoxPrice.TabIndex = 15;
-            this.textBoxPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrice_KeyPress);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 154);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 13);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Цена";
+            this.suppliersComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.suppliersComboBox.FormattingEnabled = true;
+            this.suppliersComboBox.Location = new System.Drawing.Point(85, 111);
+            this.suppliersComboBox.Name = "suppliersComboBox";
+            this.suppliersComboBox.Size = new System.Drawing.Size(171, 21);
+            this.suppliersComboBox.TabIndex = 19;
             // 
             // EditProductForm
             // 
@@ -246,6 +235,7 @@
             this.Name = "EditProductForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Редактировать продукт";
+            this.Load += new System.EventHandler(this.EditProductForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -261,10 +251,8 @@
         private System.Windows.Forms.Label labelSupplierName;
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.TextBox textBoxSupplierName;
         private System.Windows.Forms.TextBox textBoxCategoryName;
         private System.Windows.Forms.Button buttonSelectingCategory;
-        private System.Windows.Forms.Button buttonSelectingSupplier;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonChange;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
@@ -274,5 +262,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxPrice;
+        private System.Windows.Forms.ComboBox suppliersComboBox;
     }
 }

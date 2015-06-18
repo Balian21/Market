@@ -1,12 +1,10 @@
 ﻿using Model;
+using NHibernate;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-
-using System.Drawing;
-
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -33,8 +31,6 @@ namespace StoreNHibernate
             textBoxCategoryName.Text = product.Category.Name;
             textBoxCategoryName.Tag = product.Category;
 
-            textBoxSupplierName.Text = product.Supplier.Name;
-
             product.Price = Math.Round(product.Price, 2);
             textBoxPrice.Text = product.Price.ToString();
 
@@ -46,6 +42,17 @@ namespace StoreNHibernate
             }
 
             category = product.Category; // запомнить категорию продукта на случай измениний
+        }
+
+        private void EditProductForm_Load(object sender, EventArgs e)
+        {
+            using (ISession session = NHibernateHelper.OpenSession())
+            {
+                IList<Supplier> suppliers = session.CreateCriteria<Supplier>().List<Supplier>();
+
+                suppliersComboBox.DataSource = suppliers;
+                suppliersComboBox.Text = product.Supplier.Name;
+            }
         }
 
         private void buttonSelectingCategory_Click(object sender, EventArgs e)
@@ -75,6 +82,7 @@ namespace StoreNHibernate
                 this.product.Name = textBoxProductName.Text;
                 product.Availability = Convert.ToInt32(textBoxAvailability.Text);
                 product.Price = Convert.ToDecimal(textBoxPrice.Text);
+                product.Supplier = suppliersComboBox.SelectedItem as Supplier;
 
                 manageProduct.UpdateProduct(this.product);
             }
@@ -84,6 +92,7 @@ namespace StoreNHibernate
                 this.product.Category = textBoxCategoryName.Tag as Category;
                 product.Availability = Convert.ToInt32(textBoxAvailability.Text);
                 product.Price = Convert.ToDecimal(textBoxPrice.Text);
+                product.Supplier = suppliersComboBox.SelectedItem as Supplier;
                 manageProduct.UpdateProduct(this.product);
             }
 
