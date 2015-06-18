@@ -22,7 +22,7 @@ namespace MySite.Controllers
             using (ISession session = NHibernateHelper.OpenSession())
             {
                 var categories = session.Query<Category>()
-                                    .Where(p => p.Parent != null)
+                                    .Where(p => p.Parent == null)
                                     .ToList();
                 return View(categories);
             }
