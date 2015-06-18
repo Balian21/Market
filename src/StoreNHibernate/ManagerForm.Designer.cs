@@ -66,6 +66,7 @@
             this.treeViewCategories.TabIndex = 0;
             this.treeViewCategories.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeViewCategories_AfterSelect);
             this.treeViewCategories.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeViewCategories_NodeMouseDoubleClick);
+            this.treeViewCategories.Click += new System.EventHandler(this.treeViewCategories_Click);
             // 
             // contextMenuTree
             // 

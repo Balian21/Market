@@ -227,5 +227,13 @@ namespace StoreNHibernate
                 }
             }
         }
+
+        private void treeViewCategories_Click(object sender, EventArgs e)
+        {
+            if (treeViewCategories.SelectedNode != null)
+            {
+                treeViewCategories.SelectedNode = null;
+            }
+        }
     }
 }
