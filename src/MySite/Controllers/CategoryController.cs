@@ -32,12 +32,19 @@ namespace MySite.Controllers
         {
             using (ISession session = NHibernateHelper.OpenSession())
             {
-                var model = session.QueryOver<Product>().Where(p => p.Availability != null).List();
+                var childrenCategories = session.Query<Category>().Where(c => c.Parent.Id == id).ToList(); // проверка есть ли у категории дочерние элементы
 
                 int pageNumber = page ?? 1;
                 int pageSize = 5;
 
-                return View(CurrentProducts(id).ToPagedList(pageNumber, pageSize)); // выводим постранично продукты выбранной категории
+                if (childrenCategories.Count != 0)
+                {
+                    return View("Show", childrenCategories); // вывод представления с дочерними категориями
+                }
+                else
+                {
+                    return View(CurrentProducts(id).ToPagedList(pageNumber, pageSize)); // выводим постранично продукты выбранной категории
+                }
             }
         }
 
