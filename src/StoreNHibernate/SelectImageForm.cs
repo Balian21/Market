@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-
-using System.Drawing;
-
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -18,6 +15,7 @@ namespace StoreNHibernate
     public partial class SelectImageForm : Form
     {
         public Product product;
+        public Category category;
         private ImageConverter converter = new ImageConverter();
 
         public SelectImageForm(Product product)
@@ -25,6 +23,13 @@ namespace StoreNHibernate
             InitializeComponent();
 
             this.product = product;
+        }
+
+        public SelectImageForm(Category category)
+        {
+            InitializeComponent();
+
+            this.category = category;
         }
 
         private void SelectImageForm_Load(object sender, EventArgs e)
@@ -55,19 +60,41 @@ namespace StoreNHibernate
             MemoryStream memoryStream = new MemoryStream();
             pictureBox1.Image.Save(memoryStream, pictureBox1.Image.RawFormat);
             byte[] temp = memoryStream.GetBuffer();
-            product.ImageData = temp;
 
-            if (pictureBox1.Image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Jpeg))
+            if (product != null)
             {
-                product.ImageMimeType = "image/jpeg";
+                product.ImageData = temp;
+
+                if (pictureBox1.Image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Jpeg))
+                {
+                    product.ImageMimeType = "image/jpeg";
+                }
+                else if (pictureBox1.Image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Png))
+                {
+                    product.ImageMimeType = "image/png";
+                }
+                else if (pictureBox1.Image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Gif))
+                {
+                    product.ImageMimeType = "image/gif";
+                }
             }
-            else if (pictureBox1.Image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Png))
+
+            if (category != null)
             {
-                product.ImageMimeType = "image/png";
-            }
-            else if (pictureBox1.Image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Gif))
-            {
-                product.ImageMimeType = "image/gif";
+                category.ImageData = temp;
+
+                if (pictureBox1.Image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Jpeg))
+                {
+                    category.ImageMimeType = "image/jpeg";
+                }
+                else if (pictureBox1.Image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Png))
+                {
+                    category.ImageMimeType = "image/png";
+                }
+                else if (pictureBox1.Image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Gif))
+                {
+                    category.ImageMimeType = "image/gif";
+                }
             }
 
             DialogResult = DialogResult.OK;

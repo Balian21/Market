@@ -18,6 +18,10 @@ namespace Model
 
         public virtual Category Parent { get; set; }
 
+        public virtual byte[] ImageData { get; set; }
+
+        public virtual string ImageMimeType { get; set; }
+
         public virtual IList<Product> Products { get; set; }
 
         public virtual IList<Category> Children { get; set; }
