@@ -58,5 +58,22 @@ namespace MySite.Controllers
                 return products;
             }
         }
+
+        public FileContentResult GetImage(int id)
+        {
+            using (ISession session = NHibernateHelper.OpenSession())
+            {
+                var category = session.Query<Category>()
+                                .FirstOrDefault(p => p.Id == id);
+                if (category != null && category.ImageMimeType != null)
+                {
+                    return File(category.ImageData, category.ImageMimeType);
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
     }
 }

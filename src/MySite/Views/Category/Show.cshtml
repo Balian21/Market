@@ -7,11 +7,10 @@
 
 <h2>Категории</h2>
 
-<ul>
-    @foreach (var item in Model)
-    {
-        <li>
-            @Html.ActionLink(item.Name, "PagedList", "Category", new { id = item.Id }, null)
-        </li>
-    }
-</ul>
+@foreach (var item in Model)
+{
+    <div style="margin: 20px 0 20px 0; border: 1px solid grey;">
+        <img width="75" height="75" src="@Url.Action("GetImage", "Category", new { item.Id })" />
+        @Html.ActionLink(item.Name, "PagedList", "Category", new { id = item.Id }, null)
+    </div>
+}
