@@ -7,5 +7,5 @@
     <img width="75" height="75" src="@Url.Action("GetImage", "Product", new { Model.Id }, null)" />
 </div>
 <h2>@Model.Name</h2>
-<p>Цена: @Model.Price рублей</p>
+<p>Цена: @Model.Price.ToString("0.00") рублей</p>
 <p>Наличие: @Model.Availability шт.</p>
