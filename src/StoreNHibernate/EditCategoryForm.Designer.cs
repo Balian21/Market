@@ -110,6 +110,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(388, 204);
             this.Name = "EditCategoryForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Редактировать категорию";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

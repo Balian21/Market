@@ -42,8 +42,24 @@ namespace StoreNHibernate
 
             product.Category = textBoxCategory.Tag as Category;
             product.Supplier = suppliersComboBox.SelectedItem as Supplier;
-            product.Price = Convert.ToDecimal(textBoxPrice.Text);
-            product.Availability = Convert.ToInt32(textBoxAvailability.Text);
+
+            if (textBoxPrice.Text == "")
+            {
+                MessageBox.Show("Введите цену");
+            }
+            else
+            {
+                product.Price = Convert.ToDecimal(textBoxPrice.Text);
+            }
+
+            if (textBoxAvailability.Text == "")
+            {
+                MessageBox.Show("Введите наличие");
+            }
+            else
+            {
+                product.Availability = Convert.ToInt32(textBoxAvailability.Text);
+            }
 
             DialogResult = DialogResult.OK;
 

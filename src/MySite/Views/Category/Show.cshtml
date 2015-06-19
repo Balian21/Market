@@ -11,6 +11,6 @@
 {
     <div style="margin: 20px 0 20px 0; border: 1px solid grey;">
         <img width="75" height="75" src="@Url.Action("GetImage", "Category", new { item.Id })" />
-        @Html.ActionLink(item.Name, "PagedList", "Category", new { id = item.Id }, null)
+        @Html.ActionLink(item.Name, "ShowItems", "Category", new { id = item.Id }, null)
     </div>
 }

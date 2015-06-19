@@ -16,7 +16,7 @@ namespace MySite
             routes.MapRoute(
                 name: "Categories",
                 url: "categories/{id}",
-                defaults: new { controller = "Category", action = "PagedList", id = UrlParameter.Optional }
+                defaults: new { controller = "Category", action = "ShowItems", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(

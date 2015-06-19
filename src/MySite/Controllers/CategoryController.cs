@@ -28,7 +28,7 @@ namespace MySite.Controllers
             }
         }
 
-        public ActionResult PagedList(int? page, int? id)
+        public ActionResult ShowItems(int? page, int? id)
         {
             using (ISession session = NHibernateHelper.OpenSession())
             {

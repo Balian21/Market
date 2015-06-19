@@ -270,7 +270,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Category\Show.cshtml" />
     <Content Include="Views\Product\ShowProduct.cshtml" />
-    <Content Include="Views\Category\PagedList.cshtml" />
+    <Content Include="Views\Category\ShowItems.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -20,7 +20,7 @@
 }
 
 <div style="text-align: center;">
-    @Html.PagedListPager((IPagedList)Model, Page => Url.Action("PagedList", new { Page }), new PagedListRenderOptions()
+    @Html.PagedListPager((IPagedList)Model, Page => Url.Action("ShowItems", new { Page }), new PagedListRenderOptions()
          {
              LinkToFirstPageFormat = "<<",
              LinkToPreviousPageFormat = "Назад",
