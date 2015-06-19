@@ -16,6 +16,8 @@
     <div style="margin: 20px 0 20px 0; border: 1px solid grey;">
         <img width="75" height="75" src="@Url.Action("GetImage", "Product", new { item.Id })" />
         @Html.ActionLink((string)item.Name, "ShowProduct", "Product", new { item.Id }, null)
+        <p>Цена: @item.Price.ToString("0.00") руб.</p>
+        <p>Наличие: @item.Availability шт.</p>
     </div>
 }
 
