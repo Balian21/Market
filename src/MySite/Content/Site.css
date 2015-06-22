@@ -67,3 +67,19 @@ textarea {
     margin-right: 100px;
     margin-top:20px;
 }
+
+.image_category{
+    height: 150px;
+    width: 150px;
+}
+
+.text-center{
+    text-align: center; 
+}
+
+.product-item-price{
+    font-size: 24px;
+    font-weight: bold;
+    color: green;
+    display: inline-block;    
+}

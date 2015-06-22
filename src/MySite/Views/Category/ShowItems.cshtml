@@ -11,22 +11,36 @@
 
 <h2>Продукты</h2>
 
-@foreach (var item in Model)
-{
-    <div style="margin: 20px 0 20px 0; border: 1px solid grey;">
-        <img width="75" height="75" src="@Url.Action("GetImage", "Product", new { item.Id })" />
-        @Html.ActionLink((string)item.Name, "ShowProduct", "Product", new { item.Id }, null)
-        <p>Цена: @item.Price.ToString("0.00") руб.</p>
-        <p>Наличие: @item.Availability шт.</p>
-    </div>
-}
 
-<div style="text-align: center;">
-    @Html.PagedListPager((IPagedList)Model, Page => Url.Action("ShowItems", new { Page }), new PagedListRenderOptions()
+    @foreach (var item in Model)
+    {
+        <div style="margin: 20px 0 20px 0; border: 1px solid grey; width: 550px; margin-left: 20px; border-radius: 4px; padding-left: 20px;">
+            <div class="row" style="margin: 5px 0 5px 0;">
+                <div class="col-md-4">
+                    <img width="150" height="150" src="@Url.Action("GetImage", "Product", new { item.Id })" />
+                </div>
+                <div class="col-md-8">
+                    @Html.ActionLink((string)item.Name, "ShowProduct", "Product", new { item.Id }, null)
+                    <div style="margin-top: 20px; text-align: right;">
+                        <span class="product-item-price">
+                            @item.Price.ToString("0.00") руб.
+                        </span>
+                    </div>
+                    <div style="margin-top: 20px; text-align: right;">
+                        <span>Наличие: @item.Availability шт.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+
+                <div style="text-align: center;">
+                    @Html.PagedListPager((IPagedList)Model, Page => Url.Action("ShowItems", new { Page }), new PagedListRenderOptions()
          {
              LinkToFirstPageFormat = "<<",
              LinkToPreviousPageFormat = "Назад",
              LinkToNextPageFormat = "Вперед",
              LinkToLastPageFormat = ">>"
          })
-</div>
+                </div>

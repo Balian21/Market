@@ -7,10 +7,18 @@
 
 <h2>Категории</h2>
 
-@foreach (var item in Model)
-{
-    <div style="margin: 20px 0 20px 0; border: 1px solid grey;">
-        <img width="75" height="75" src="@Url.Action("GetImage", "Category", new { item.Id })" />
-        @Html.ActionLink(item.Name, "ShowItems", "Category", new { id = item.Id }, null)
-    </div>
-}
+<div class="row" style=" margin-left: 10px;">
+        @foreach (var item in Model)
+        {
+            <a href="@Url.Action("ShowItems", "Category", new { id = item.Id })">
+                <div class="col-md-3" style="margin: 10px 10px 10px 10px; border: 1px solid grey; text-align:center; border-radius: 10px;">
+                    <div style="padding-top: 5px;">
+                        <img class="image_category" src="@Url.Action("GetImage", "Category", new { item.Id })" />
+                    </div>
+                    <div class="text-center">
+                        @item.Name
+                    </div>                                        
+                </div>
+            </a>
+        }
+</div>
