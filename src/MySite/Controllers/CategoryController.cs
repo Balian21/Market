@@ -28,13 +28,12 @@ namespace MySite.Controllers
             }
         }
 
-        public ActionResult ShowItems(int? page, int? id)
+        public ActionResult ShowItems(int? id = null, int page = 1)
         {
             using (ISession session = NHibernateHelper.OpenSession())
             {
                 var childrenCategories = session.Query<Category>().Where(c => c.Parent.Id == id).ToList(); // проверка есть ли у категории дочерние элементы
 
-                int pageNumber = page ?? 1;
                 int pageSize = 5;
 
                 if (childrenCategories.Count != 0)
@@ -43,7 +42,7 @@ namespace MySite.Controllers
                 }
                 else
                 {
-                    return View(CurrentProducts(id).ToPagedList(pageNumber, pageSize)); // выводим постранично продукты выбранной категории
+                    return View(CurrentProducts(id).ToPagedList(page, pageSize)); // выводим постранично продукты выбранной категории // избавиться от ToPagedList ToPagedList
                 }
             }
         }
