@@ -33,6 +33,8 @@ namespace MySite.Controllers
             using (ISession session = NHibernateHelper.OpenSession())
             {
                 var childrenCategories = session.Query<Category>().Where(c => c.Parent.Id == id).ToList(); // проверка есть ли у категории дочерние элементы
+                var rootCategory = session.Get<Category>(id);
+                ViewBag.RootId = rootCategory.Id;
 
                 int pageSize = 5;
 
