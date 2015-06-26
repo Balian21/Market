@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "SearchProducts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>SearchProducts</h2>
+
+@*<div>
+        Message: @ViewBag.Message
+    </div>*@
+
+@foreach (var item in Model)
+{
+    <p>@item.Name</p>
+}

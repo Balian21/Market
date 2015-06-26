@@ -64,6 +64,11 @@
             </div>
         </div>
 
+        <form action="/Search/SearchProducts" method="post">
+            <input type="text" name="message" />
+            <input type="submit" value="Поиск" />
+        </form>
+
         <div style="margin:10px 0 10px 0; height:auto; min-height:700px;">
             @RenderBody()
         </div>
