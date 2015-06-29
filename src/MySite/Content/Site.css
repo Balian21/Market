@@ -80,8 +80,7 @@ textarea {
 .product-item-price{
     font-size: 24px;
     font-weight: bold;
-    color: green;
-    display: inline-block;    
+    color: green;       
 }
 
 .image-size-carousel{

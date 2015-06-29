@@ -3,9 +3,42 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div style="margin: 20px 0 20px 0; border: 1px solid grey;">
-    <img width="75" height="75" src="@Url.Action("GetImage", "Product", new { Model.Id }, null)" />
+<h3>@Model.Name</h3><hr />
+<div class="text-right product-item-price">
+    <p>Цена: @Model.Price.ToString("0.00") рублей</p>
 </div>
-<h2>@Model.Name</h2>
-<p>Цена: @Model.Price.ToString("0.00") рублей</p>
-<p>Наличие: @Model.Availability шт.</p>
+<div class="text-right">
+    <p>Наличие: @Model.Availability шт.</p>
+</div>
+
+<div class="row">
+    <div class="col-xs-5">
+        <div style="margin: 20px 0 20px 0; border: 1px solid grey;">
+            <img width="275" height="275" src="@Url.Action("GetImage", "Product", new { Model.Id }, null)" />
+        </div>
+    </div>
+    <div class="col-xs-7">
+    </div>
+</div>
+
+
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#panel1">Характеристики</a></li>
+    <li><a data-toggle="tab" href="#panel2">Комплектация</a></li>
+    <li><a data-toggle="tab" href="#panel3">Документация</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="panel1" class="tab-pane fade in active">
+        <h3>Характеристики</h3>
+        <p>Содержимое...</p>
+    </div>
+    <div id="panel2" class="tab-pane fade">
+        <h3>Комплектация</h3>
+        <p>Содержимое...</p>
+    </div>
+    <div id="panel3" class="tab-pane fade">
+        <h3>Документация</h3>
+        <p>Содержимое...</p>
+    </div>
+</div>
