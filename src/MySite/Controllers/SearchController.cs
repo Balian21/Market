@@ -1,6 +1,8 @@
 ﻿using Model;
 using NHibernate;
 using NHibernate.Linq;
+using PagedList;
+using PagedList.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;

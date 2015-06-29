@@ -1,15 +1,13 @@
-﻿@{
-    ViewBag.Title = "SearchProducts";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@using PagedList.Mvc;
+@using PagedList;
+
+@{
+    ViewBag.Title = "Продукты";
 }
 
-<h2>SearchProducts</h2>
+<link href="@Url.Content("/Content/PagedList.css")" rel="stylesheet"
+      type="text/css" />
 
-@*<div>
-        Message: @ViewBag.Message
-    </div>*@
+<h2>Продукты</h2>
 
-@foreach (var item in Model)
-{
-    <p>@item.Name</p>
-}
+@Html.Partial("_Results");

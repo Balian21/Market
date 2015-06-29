@@ -44,7 +44,7 @@ namespace MySite.Controllers
                 }
                 else
                 {
-                    return View(CurrentProducts(id).ToPagedList(page, pageSize)); // выводим постранично продукты выбранной категории // избавиться от ToPagedList ToPagedList
+                    return View(CurrentProducts(id).ToPagedList(page, pageSize)); // выводим постранично продукты выбранной категории // избавиться от ToPagedList
                 }
             }
         }
