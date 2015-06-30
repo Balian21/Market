@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Model
 {
-    public class Order:
+    public class Order
     {
-        public int Id { get; set; }
+        public virtual int Id { get; set; }
 
-        public IEnumerable<Product> Products { get; set; }
+        public virtual IEnumerable<Product> Products { get; set; }
 
-        public decimal TotalAmount { get; set; }
+        public virtual decimal TotalAmount { get; set; }
     }
 }
