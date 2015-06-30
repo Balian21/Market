@@ -17,7 +17,7 @@ namespace StoreNHibernate
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new ManagerForm());
-            NHibernateHelper.InitializeSessionFactory();
+            //NHibernateHelper.InitializeSessionFactory();
         }
     }
 }
