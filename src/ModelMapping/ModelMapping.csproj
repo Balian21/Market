@@ -48,7 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CartMap.cs" />
     <Compile Include="CategoryMap.cs" />
+    <Compile Include="OrderMap.cs" />
     <Compile Include="ProductMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SupplierMap.cs" />
