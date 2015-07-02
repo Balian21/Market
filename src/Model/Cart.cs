@@ -9,15 +9,10 @@ namespace Model
     public class Cart
     {
         private IList<CartLine> cartlines = new List<CartLine>();
-        public CartLine cartline;
 
         public virtual int Id { get; set; }
 
-        public virtual IList<CartLine> CartLines
-        {
-            get { return cartlines; }
-            set { cartlines = value; }
-        }
+        public virtual IList<CartLine> CartLines { get; set; }
 
         public void AddItem(Product product, int quantity)
         {
