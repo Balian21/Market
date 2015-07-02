@@ -12,11 +12,10 @@
 
 <h2>Категории</h2>
 
-
 <div class="row" style=" margin-left: 10px;">
     @foreach (var item in Model)
     {
-        <a href="@Url.Action("ShowItems", "Category", new { id = item.Id })">
+        <a href="@Url.Action("ShowItemsNotPages", "Category", new { id = item.Id })">
             <div class="col-md-3" style="margin: 10px 10px 10px 10px; border: 1px solid grey; text-align:center; border-radius: 10px;">
                 <div style="padding-top: 5px;">
                     <img class="image_category" src="@Url.Action("GetImage", "Category", new { item.Id })" />

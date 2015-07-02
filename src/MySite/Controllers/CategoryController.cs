@@ -76,5 +76,28 @@ namespace MySite.Controllers
                 }
             }
         }
+
+        public ActionResult ShowItemsNotPages(int? id = null)
+        {
+            using (ISession session = NHibernateHelper.OpenSession())
+            {
+                var childrenCategories = session.Query<Category>().Where(c => c.Parent.Id == id).ToList(); // проверка есть ли у категории дочерние элементы
+                var rootCategory = session.Get<Category>(id);
+                ViewBag.RootId = rootCategory.Id;
+
+                var products = session.Query<Product>()
+                                 .Where(p => p.Category.Id == id)
+                                 .ToList();
+
+                if (childrenCategories.Count != 0)
+                {
+                    return View("Show", childrenCategories);
+                }
+                else
+                {
+                    return View(products);
+                }
+            }
+        }
     }
 }

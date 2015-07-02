@@ -33,5 +33,25 @@ namespace Model
                 line.Quantity += quantity;
             }
         }
+
+        public void RemoveLine(Product product)
+        {
+            cartlines.RemoveAt(product.Id);
+        }
+
+        public decimal ComputeTotalValue()
+        {
+            return cartlines.Sum(e => e.Product.Price * e.Quantity);
+        }
+
+        public void Clear()
+        {
+            cartlines.Clear();
+        }
+
+        public IEnumerable<CartLine> Lines
+        {
+            get { return cartlines; }
+        }
     }
 }

@@ -1,26 +1,34 @@
-﻿@foreach (var item in Model)
-{
-    <div style="margin: 20px 0 20px 0; border: 1px solid grey; width: 550px; margin-left: 20px; border-radius: 4px; padding-left: 20px;">
-        <div class="row" style="margin: 5px 0 5px 0;">
-            <a href="@Url.Action("ShowProduct", "Product", new { item.Id })">
-                <div class="col-md-4">
-                    <img width="150" height="150" src="@Url.Action("GetImage", "Product", new { item.Id })" />
-                </div>
-            </a>
-            <div class="col-md-8">
-                @Html.ActionLink((string)item.Name, "ShowProduct", "Product", new { item.Id }, null)
-                <div style="margin-top: 20px; text-align: right;">
-                    <span class="product-item-price">
-                        @item.Price.ToString("0.00") руб
-                    </span>
-                </div>
-                <div style="margin-top: 20px; text-align: right;">
-                    <span>Наличие: @item.Availability шт</span>
-                </div>
-                <div class="pull-right">
-                    <input class="btn btn-success" type="button" value="Добавить в корзину">
-                </div>
+﻿@model Model.Product
+
+@*@foreach (var item in Model)
+    {*@
+<div style="margin: 20px 0 20px 0; border: 1px solid grey; width: 550px; margin-left: 20px; border-radius: 4px; padding-left: 20px;">
+    <div class="row" style="margin: 5px 0 5px 0;">
+        <a href="@Url.Action("ShowProduct", "Product", new { Model.Id })">
+            <div class="col-md-4">
+                <img width="150" height="150" src="@Url.Action("GetImage", "Product", new { Model.Id })" />
             </div>
+        </a>
+        <div class="col-md-8">
+            @Html.ActionLink((string)Model.Name, "ShowProduct", "Product", new { Model.Id }, null)
+            <div style="margin-top: 20px; text-align: right;">
+                <span class="product-item-price">
+                    @Model.Price.ToString("0.00") руб
+                </span>
+            </div>
+            <div style="margin-top: 20px; text-align: right;">
+                <span>Наличие: @Model.Availability шт</span>
+            </div>            
+
+            @using (Html.BeginForm("AddToCart", "Cart"))
+            {
+                <div class="pull-right">
+                    @Html.HiddenFor(x => x.Id)
+                    @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                    <input type="submit" class="btn btn-success" value="Добавить в корзину" />
+                </div>
+            }
         </div>
     </div>
-}
+</div>
+@*}*@

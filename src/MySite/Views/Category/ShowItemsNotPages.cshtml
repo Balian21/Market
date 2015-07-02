@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "ShowItemsNotPages";
+}
+
+<h2>ShowItemsNotPages</h2>
+
+@foreach (var item in Model)
+{
+    @Html.Partial("_Results", (Model.Product)item)
+}
