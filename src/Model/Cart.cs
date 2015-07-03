@@ -8,7 +8,7 @@ namespace Model
 {
     public class Cart
     {
-        private IList<CartLine> cartlines = new List<CartLine>();
+        private List<CartLine> cartlines = new List<CartLine>();
 
         public virtual int Id { get; set; }
 
@@ -36,7 +36,7 @@ namespace Model
 
         public void RemoveLine(Product product)
         {
-            cartlines.RemoveAt(product.Id);
+            cartlines.RemoveAll(p => p.Product.Id == product.Id);
         }
 
         public decimal ComputeTotalValue()

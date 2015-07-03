@@ -48,11 +48,11 @@ namespace MySite.Controllers
             }
         }
 
-        public RedirectToRouteResult RemoveFromCart(Cart cart, int productId, string returnUrl)
+        public RedirectToRouteResult RemoveFromCart(Cart cart, int Id, string returnUrl)
         {
             using (ISession session = NHibernateHelper.OpenSession())
             {
-                Product product = session.Get<Product>(productId);
+                Product product = session.Get<Product>(Id);
 
                 if (product != null)
                 {
