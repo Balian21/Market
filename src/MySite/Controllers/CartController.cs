@@ -25,16 +25,16 @@ namespace MySite.Controllers
         //    }
         //}
 
-        public ViewResult Index(string returnUrl)
+        public ViewResult Index(Cart cart, string returnUrl)
         {
             return View(new CartIndexViewModel
             {
-                Cart = GetCart(),
+                Cart = cart,
                 ReturnUrl = returnUrl
             });
         }
 
-        public RedirectToRouteResult AddToCart(int Id, string returnUrl)
+        public RedirectToRouteResult AddToCart(Cart cart, int Id, string returnUrl)
         {
             using (ISession session = NHibernateHelper.OpenSession())
             {
@@ -42,13 +42,13 @@ namespace MySite.Controllers
 
                 if (product != null)
                 {
-                    GetCart().AddItem(product, 1);
+                    cart.AddItem(product, 1);
                 }
                 return RedirectToAction("Index", new { returnUrl });
             }
         }
 
-        public RedirectToRouteResult RemoveFromCart(int productId, string returnUrl)
+        public RedirectToRouteResult RemoveFromCart(Cart cart, int productId, string returnUrl)
         {
             using (ISession session = NHibernateHelper.OpenSession())
             {
@@ -56,21 +56,10 @@ namespace MySite.Controllers
 
                 if (product != null)
                 {
-                    GetCart().RemoveLine(product);
+                    cart.RemoveLine(product);
                 }
                 return RedirectToAction("Index", new { returnUrl });
             }
-        }
-
-        public Cart GetCart()
-        {
-            Cart cart = (Cart)Session["Cart"];
-            if (cart == null)
-            {
-                cart = new Cart();
-                Session["Cart"] = cart;
-            }
-            return cart;
         }
     }
 }
