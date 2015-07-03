@@ -167,6 +167,7 @@
     </Compile>
     <Compile Include="Infrastructure\Binders\CartModelBinder.cs" />
     <Compile Include="Models\CartIndexViewModel.cs" />
+    <Compile Include="Models\ShippingDetails.cs" />
     <Compile Include="NHibernateHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -284,6 +285,7 @@
     <Content Include="Views\Cart\Index.cshtml" />
     <Content Include="Views\Category\ShowItemsNotPages.cshtml" />
     <Content Include="Views\Cart\Summary.cshtml" />
+    <Content Include="Views\Cart\Checkout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
