@@ -1,0 +1,20 @@
+﻿@model Model.Product
+
+@{
+    ViewBag.Title = "Админ панель: редактирование товара";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Редактирование продукта «@Model.Name»</h2>
+
+@using (Html.BeginForm())
+{
+    <label>Наименование</label>
+    @Html.TextBoxFor(p => p.Name)
+    <label>Цена</label>
+    @Html.TextBoxFor(p => p.Price)
+    <label>Наличие</label>
+    @Html.TextBoxFor(p => p.Availability)
+    <input type="submit" value="Сохранить" />
+    @Html.ActionLink("Отменить изменения и вернуться к списку", "Index")
+}
