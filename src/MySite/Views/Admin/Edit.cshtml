@@ -7,7 +7,7 @@
 
 <h2>Редактирование продукта «@Model.Name»</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "Admin"))
 {
     <label>Наименование</label>
     @Html.TextBoxFor(p => p.Name)

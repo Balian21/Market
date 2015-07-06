@@ -71,5 +71,10 @@ namespace MySite.Controllers
                 trans.Commit();
             }
         }
+
+        public ViewResult Create()
+        {
+            return View("Edit", new Product());
+        }
     }
 }
