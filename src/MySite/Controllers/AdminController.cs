@@ -76,5 +76,34 @@ namespace MySite.Controllers
         {
             return View("Edit", new Product());
         }
+
+        public Product DeleteProduct(int Id, ISession session)
+        {
+            using (var trans = session.BeginTransaction())
+            {
+                Product db_prod = session.Get<Product>(Id);
+                if (db_prod != null)
+                {
+                    session.Delete(db_prod);
+                    trans.Commit();
+                }
+                return db_prod;
+            }
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int Id)
+        {
+            using (ISession session = NHibernateHelper.OpenSession())
+            {
+                Product deletedProduct = DeleteProduct(Id, session);
+                if (deletedProduct != null)
+                {
+                    TempData["message"] = string.Format("Продукт \"{0}\" был удален",
+                    deletedProduct.Name);
+                }
+                return RedirectToAction("Index");
+            }
+        }
     }
 }
