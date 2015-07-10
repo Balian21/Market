@@ -34,11 +34,11 @@ namespace MySite.Controllers
             });
         }
 
-        public RedirectToRouteResult AddToCart(Cart cart, int Id, string returnUrl)
+        public RedirectToRouteResult AddToCart(Cart cart, int productId, string returnUrl)
         {
             using (ISession session = NHibernateHelper.OpenSession())
             {
-                Product product = session.Get<Product>(Id);
+                Product product = session.Get<Product>(productId);
 
                 if (product != null)
                 {

@@ -1,4 +1,6 @@
-﻿@{
+﻿@model IList<Model.Product>
+
+@{
     ViewBag.Title = "ShowItemsNotPages";
 }
 
@@ -6,5 +8,5 @@
 
 @foreach (var item in Model)
 {
-    @Html.Partial("_Results", (Model.Product)item)
+    @Html.Partial("_Results", item)
 }
