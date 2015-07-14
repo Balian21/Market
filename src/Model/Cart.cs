@@ -14,7 +14,7 @@ namespace Model
 
         public virtual IList<CartLine> CartLines { get; set; }
 
-        public void AddItem(Product product, int quantity)
+        public virtual void AddItem(Product product, int quantity)
         {
             CartLine line = cartlines
                 .Where(p => p.Product.Id == product.Id)
@@ -34,24 +34,21 @@ namespace Model
             }
         }
 
-        public void RemoveLine(Product product)
+        public virtual void RemoveLine(Product product)
         {
             cartlines.RemoveAll(p => p.Product.Id == product.Id);
         }
 
-        public decimal ComputeTotalValue()
+        public virtual decimal ComputeTotalValue()
         {
             return cartlines.Sum(e => e.Product.Price * e.Quantity);
         }
 
-        public void Clear()
+        public virtual void Clear()
         {
             cartlines.Clear();
         }
 
-        public IEnumerable<CartLine> Lines
-        {
-            get { return cartlines; }
-        }
+        public virtual IEnumerable<CartLine> Lines { get; set; }
     }
 }

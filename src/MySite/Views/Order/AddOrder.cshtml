@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "AddOrder";
+}
+
+<h2>Ваш заказ</h2>
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>Наименование: @item.OrederItems.Product.Name</li>
+    }
+</ul>
